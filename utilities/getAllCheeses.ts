@@ -1,5 +1,3 @@
-
-
 import fs from 'fs'
 import { Cheese } from '../@types/interfaces/cheese'
 const fsPromises = fs.promises
