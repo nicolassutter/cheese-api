@@ -1,6 +1,7 @@
 import express from 'express'
 import { registerMiddlewares } from './middlewares/index'
 import { registerRouters } from './api/index'
+const cors = require('cors')
 
 /**
  * App setup
@@ -11,6 +12,7 @@ const PORT = 4000
 /**
  * On init
  */
+app.use(cors())
 registerMiddlewares(app)
 registerRouters(app)
 
