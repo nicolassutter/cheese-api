@@ -1,10 +1,10 @@
 import express from 'express'
 import { Cheese } from '../../@types/interfaces/cheese'
 import { getAllCheeses } from '../../utilities/getAllCheeses'
+import { lower } from '../../utilities/string'
+import { searchByImage, searchByMilk, searchByName } from './get/search'
 
 const router = express.Router()
-
-const lower = (str: string) => str.toLowerCase()
 
 /**
  * Will get a random cheese
@@ -54,6 +54,28 @@ router.get('/cheese/:name', async (req, res) => {
 router.get('/random', async (req, res) => {
   const cheeses = await getAllCheeses()
   res.json(getRandomCheese(cheeses))
+})
+
+/**
+ * Search for cheeses
+ */
+ router.get('/search', async (req, res) => {
+  let cheeses = await getAllCheeses()
+  const { name, milk, image } = req.query as { [key: string]: string }
+  
+  if (name) {
+    cheeses = searchByName(cheeses, name)
+  }
+  
+  if (milk) {
+    cheeses = searchByMilk(cheeses, milk)
+  }
+
+  if (image) {
+    cheeses = searchByImage(cheeses, image)
+  }
+
+  res.json(cheeses)
 })
 
 export default router

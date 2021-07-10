@@ -17,4 +17,9 @@ collections:
       - { name: description, label: Description, widget: markdown }
       - { name: raw_description, label: Raw Description, widget: string }
       - { name: image, label: Image, widget: string }
-      - { name: milk, label: Milk, widget: string }
+      - name: milk
+        label: Milk
+        widget: select
+        options:
+          - Cow
+          - Goat
