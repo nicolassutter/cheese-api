@@ -7,11 +7,14 @@ collections:
     label: "Cheese" # Used in the UI
     format: json
     folder: "cheeses" # The path to the folder where the documents are stored
+    identifier_field: name
+    editor:
+      preview: false
     create: true # Allow users to create new documents in this collection
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
     fields: # The fields for each document, usually in front matter
       - { name: name, label: Name, widget: string }
-      - { name: description, label: Description, widget: string }
+      - { name: description, label: Description, widget: markdown }
       - { name: raw_description, label: Raw Description, widget: string }
       - { name: image, label: Image, widget: string }
       - { name: milk, label: Milk, widget: string }
