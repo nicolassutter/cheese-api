@@ -5,7 +5,7 @@ import { Cheese } from '../@types/interfaces/cheese'
 const fsPromises = fs.promises
 const path = require('path')
 
-const directoryPath = path.join(__dirname, '../cheesses')
+const directoryPath = path.join(__dirname, '../cheeses')
 const extension = '.json'
 
 /**

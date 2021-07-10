@@ -6,7 +6,7 @@ import { registerRouters } from './api/index'
  * App setup
  */
 const app = express()
-const PORT = 3000
+const PORT = 4000
 
 /**
  * On init
