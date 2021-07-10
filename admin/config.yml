@@ -1,5 +1,5 @@
 backend:
-  name: git-gateway
+  name: github
   branch: main
 media_folder: "./images/uploads"
 collections:
@@ -10,8 +10,6 @@ collections:
     create: true # Allow users to create new documents in this collection
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
     fields: # The fields for each document, usually in front matter
-      - { label: "Layout", name: "layout", widget: "hidden", default: "blog" }
-      - { label: "Title", name: "title", widget: "string"}
       - { name: name, label: Name, widget: string }
       - { name: description, label: Description, widget: string }
       - { name: raw_description, label: Raw Description, widget: string }
