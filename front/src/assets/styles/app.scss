@@ -9,7 +9,7 @@ body {
 }
 
 .btn-cheese {
-  @include apply('block p-3 font-bold transition-colors w-max');
+  @include apply('block p-3 font-bold transition-colors');
 
   /* COLORS */
   @include apply('bg-yellow-400 text-gray-800');
@@ -23,6 +23,15 @@ body {
   }
 
   &.flex { @include apply('flex'); }
+  &.rounded-r { @include apply('rounded-r'); }
+
+  &:not(.w-max) {
+    @include apply('rounded-t rounded-b-none w-full');
+    
+    @screen md {
+      @include apply('rounded-t-none rounded-l w-max');
+    }
+  }
 }
 
 .inline-code {

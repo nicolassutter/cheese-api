@@ -6,7 +6,7 @@
 
 
 <div class="w-full max-w-4xl space-y-10">
-  <h1 class="font-bold text-7xl">The Cheese API</h1>
+  <h1 class="text-4xl font-bold md:text-7xl">The Cheese API</h1>
 
   <p class="text-xl leading-relaxed">
     With the cheese api you can finally complete you wildest fantasy and discover more cheese than you could possibly eat in a lifetime.
@@ -14,7 +14,7 @@
 
   <Link
     to="/docs"
-    class="rounded btn-cheese">
+    class="rounded rounded-r btn-cheese w-max">
     Get started
   </Link>
 

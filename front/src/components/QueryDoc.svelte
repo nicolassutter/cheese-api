@@ -31,8 +31,8 @@
 <div class="max-w-xl flex-container">
   <slot name="header"></slot>
 
-  <h3 class="text-4xl font-medium underline">{ title }</h3>
-  <p class="mt-5 text-xl text-gray-700">
+  <h3 class="text-2xl font-medium underline md:text-4xl">{ title }</h3>
+  <p class="mt-5 text-lg text-gray-700 md:text-xl">
     <slot name="description"></slot>
   </p>
 

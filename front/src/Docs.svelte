@@ -6,7 +6,7 @@
 
 
 <div class="w-full max-w-4xl">
-  <h1 class="mt-10 font-bold text-7xl">API Documentation</h1>
+  <h1 class="mt-10 text-4xl font-bold md:text-7xl">API Documentation</h1>
 
   <p class="mt-10 text-xl leading-relaxed">
     This documentation explains how each query works as well as what it returns.
