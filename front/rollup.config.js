@@ -3,10 +3,13 @@ import commonjs from '@rollup/plugin-commonjs';
 import resolve from '@rollup/plugin-node-resolve';
 import livereload from 'rollup-plugin-livereload';
 import { terser } from 'rollup-plugin-terser';
+import replace from '@rollup/plugin-replace';
 import sveltePreprocess from 'svelte-preprocess';
 import typescript from '@rollup/plugin-typescript';
 import css from 'rollup-plugin-css-only';
 import json from '@rollup/plugin-json'
+import dotenv from "dotenv"
+dotenv.config()
 
 const production = !process.env.ROLLUP_WATCH;
 
@@ -41,6 +44,15 @@ export default {
 	},
 	plugins: [
     json(),
+    replace({
+      process: JSON.stringify({
+        env: {
+          API_DEV_URL: process.env.API_DEV_URL,
+          API_PROD_URL: process.env.API_PROD_URL,
+          production: !process.env.ROLLUP_WATCH
+        }
+      })
+    }),
 		svelte({
 			preprocess: sveltePreprocess({
         sourceMap: !production,

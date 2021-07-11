@@ -1,0 +1,3 @@
+@mixin apply($classes: '') {
+  @apply #{$classes};
+}

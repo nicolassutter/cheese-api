@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import './mixins';
+
+body {
+  @include apply('leading-relaxed');
+}
+
+.btn-cheese {
+  @include apply('block p-3 font-bold transition-colors w-max');
+
+  /* COLORS */
+  @include apply('bg-yellow-400 text-gray-800');
+
+  /* FOCUS & HOVER */
+  @include apply('focus:ring-2 focus:ring-offset-2 focus:ring-yellow-200');
+
+  &:not(.no-hover) {
+    /* FOCUS & HOVER */
+    @include apply('hover:bg-yellow-300');
+  }
+
+  &.flex { @include apply('flex'); }
+}
+
+.inline-code {
+  /* COLORS */
+  @include apply('bg-gray-200 text-gray-700 text-base rounded py-1 px-2');
+}
+
+/* Loaders */
+.sk-chase {
+  --sk-color: theme('colors.bluegray.800');
+}

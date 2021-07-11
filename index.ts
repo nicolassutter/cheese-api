@@ -7,7 +7,7 @@ const cors = require('cors')
  * App setup
  */
 const app = express()
-const PORT = 4000
+const PORT = process.env.PORT || 4000
 
 /**
  * On init
